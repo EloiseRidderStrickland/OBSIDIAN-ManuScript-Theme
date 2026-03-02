@@ -9,9 +9,37 @@
 {
 
 }
+.markdown-source-view .cm-em,
+.markdown-rendered em {color: var(--color-accent)}
+
+.markdown-source-view .cm-strong,
+.markdown-rendered strong {color: var(--color-accent)}
+
+.markdown-source-view .cm-comment
+{
+	font-family: var(--monospace-font);
+	color: var(--light-text);
+	line-height: 0;
+	font-size: 12.5px !important;	
+}
+
+.markdown-source-view .cm-inline-code, .cm-hmd-codeblock,
+.markdown-rendered code
+{
+	color: var(--light-text) !important;
+	Background-color: #00000000 !important;
+}
+
+.view-header-title {color: var(--color-accent);}
+.status-bar {font-family: var(--monospace-font);}
+
 
 
 body {
+
+	--active-hover: 128, 128, 128;     
+    --cursor-line-background: rgba(var(--active-hover), 0.15);
+
 	--radius-s: 0px;
 	--radius-m: 0px;
 	--radius-l: 0px;
@@ -21,6 +49,11 @@ body {
 	--toggle-radius: 0px;
 	--toggle-thumb-radius: 0px;
 	--slider-thumb-radius: 0px;
+}
+
+.cm-active:not(.cm-gutterElement) {
+    background-color: var(--cursor-line-background);
+	border-radius: 5px;
 }
 
 .workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
@@ -44,4 +77,62 @@ svg * {
 
 .menu-separator {
 	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+}
+
+:root
+{
+	--monospace-font: monospace;
+
+	--light-text: grey;
+	--tomato: rgb(255, 99, 71);
+	--orange: rgb(236, 170, 107);
+	--yellow: rgb(255, 219, 120);
+	--green: rgb(126, 177, 134);
+	--blue: rgb(112, 156, 234);
+	--violet: rgb(134, 148, 224);
+}
+
+/* -------------- CSSCLASSES -------------- */
+
+/* --- Adds a natural automatic spacing after each paragraph ('Enter') --- */
+.markdown-source-view.paragraph-space .cm-line:not(.HyperMD-codeblock),
+.markdown-rendered.paragraph-space p {padding-bottom: 10px !important;}
+
+/* --- Adds a natural automatic indent at the beginning of a new paragraph --- */
+.markdown-source-view.paragraph-indent
+.cm-line:not(.HyperMD-header):not(.hr):not(.HyperMD-codeblock),
+.markdown-rendered.paragraph-indent p
+{text-indent: 2em !important;}
+
+/* --- Changes the line width from default to full for a specific note --- */
+.markdown-source-view.full-width .cm-scroller {--file-line-width: auto;}
+.markdown-rendered.full-width {--file-line-width: auto;}
+
+/* --- Book-Template ---*/
+
+.markdown-rendered.book-template .markdown-preview-sizer {
+	/*width: 576px; 					/* -- Outer Standard Book Size */
+	width: 426px;						/* -- Symmetrical 75px or 0.75cm hard margin */
+	font-size: 12.5px !important;		/* -- Preview Font Size */
+	margin-block-start: 0px;			/* -- Removes the top margin of the paragraph text */
+	text-align: justify;
+}    
+
+.markdown-source-view.book-template .cm-line, 		/* -- Document Text Font */
+.markdown-rendered.book-template {						
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif !important;
+	font-weight: normal !important;
+	line-height: 1.5 !important;
+}
+
+.markdown-rendered.book-template h1,	/* -- Render-View Heading Formatting */
+.markdown-rendered.book-template h2,
+.markdown-rendered.book-template h3,
+.markdown-rendered.book-template h4,
+.markdown-rendered.book-template h5,
+.markdown-rendered.book-template h6 {
+	font-weight: normal !important;
+	font-size: 20px !important;			/* -- Render-View Heading Size */
+	text-align: center;					/* -- Render-View Heading Alignment */
+	margin-bottom: 0px;					/* -- Render-View Heading Margin */
 }
