@@ -106,9 +106,11 @@ svg * {
 
 /* --- Book-Template ---*/
 
-.markdown-source-view.book-template .cm-active:not(.cm-gutterElement) {
+.markdown-source-view.book-template .cm-active.cm-line {
     background-color: var(--cursor-line-background);
 	border-radius: 5px;
+	box-shadow: 0 2px 0 3px var(--cursor-line-background);
+   
 }
 
 .markdown-source-view.book-template .cm-gutter		/* Shades the Number Gutter */
