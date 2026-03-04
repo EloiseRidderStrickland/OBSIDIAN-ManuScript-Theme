@@ -1,40 +1,61 @@
 
+/*
+	NAME: ManuScript Theme
+	AUTHOR: Eloise Ridder-Strickland
+*/
+
 
 .theme-dark
-{
-
-}
+{ }
 
 .theme-light
-{
-
-}
+{ }
 
 .markdown-source-view .cm-em,
 .markdown-rendered em {color: var(--color-accent)}
-
 .markdown-source-view .cm-strong,
 .markdown-rendered strong {color: var(--color-accent)}
+.view-header-title {color: var(--color-accent);}
+.status-bar {font-family: var(--monospace-font);}
 
 .markdown-source-view .cm-comment
 {	font-family: var(--monospace-font);
 	color: var(--dark-grey);
 	line-height: 0;
-	font-size: 12.5px !important;
-}
+	font-size: 12.5px !important;}
 
 .markdown-source-view .cm-inline-code, .cm-hmd-codeblock,
-.markdown-rendered code
-{
+.markdown-rendered code {
 	color: var(--light-grey) !important;
-	Background-color: #00000000 !important;
-}
+	Background-color: #00000000 !important;}
 
-
-.view-header-title {color: var(--color-accent);}
-.status-bar {font-family: var(--monospace-font);}
 .nav-folder-title
 {color: var(--color-accent);}
+
+.nav-files-container > div > .nav-folder:nth-child(6n + 1) { --folder-color: var(--folder-color-1); }
+.nav-files-container > div > .nav-folder:nth-child(6n + 2) { --folder-color: var(--folder-color-2); }
+.nav-files-container > div > .nav-folder:nth-child(6n + 3) { --folder-color: var(--folder-color-3); }
+.nav-files-container > div > .nav-folder:nth-child(6n + 4) { --folder-color: var(--folder-color-4); }
+.nav-files-container > div > .nav-folder:nth-child(6n + 5) { --folder-color: var(--folder-color-5); }
+.nav-files-container > div > .nav-folder:nth-child(6n + 6) { --folder-color: var(--folder-color-6); }
+.nav-files-container > div > .nav-folder:nth-child(12n + 7) { --folder-color: var(--folder-color-7); }
+.nav-files-container > div > .nav-folder:nth-child(12n + 8) { --folder-color: var(--folder-color-8); }
+.nav-files-container > div > .nav-folder:nth-child(12n + 9) { --folder-color: var(--folder-color-9); }
+.nav-files-container > div > .nav-folder:nth-child(12n + 10) { --folder-color: var(--folder-color-10); }
+.nav-files-container > div > .nav-folder:nth-child(12n + 11) { --folder-color: var(--folder-color-11); }
+.nav-files-container > div > .nav-folder:nth-child(12n + 12) { --folder-color: var(--folder-color-12); }
+
+/* Theme-specific folder borders */
+.nav-files-container > div > .nav-folder {
+   /*border: 1px solid var(--dark-grey);*/
+   border-left: 4px solid var(--folder-color);
+   background-color: var(--transparent-dark);
+   border-radius: 0 5px 5px 0;
+}
+
+.nav-folder-title {color: var(--folder-color);}
+.nav-files-container > div > .nav-folder + .nav-folder 
+{margin-top: var(--size-2-2);}
 
 
 body {
@@ -51,8 +72,7 @@ body {
 	--toggle-radius: 0px;
 	--toggle-thumb-radius: 0px;
 	--slider-thumb-radius: 0px;
-
-	--hr-thickness: 1px;                                   	/* Bar Thickness */
+	--hr-thickness: 1px;
 }
 
 .workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after 
@@ -72,23 +92,46 @@ svg * {
 {
 	--monospace-font: monospace;
 
-	--black: #292826;
+	--transparent-light: rgba(128, 128, 128, 0.2);
+	--transparent-dark: rgba(128, 128, 128, 0.07);
+	--transparent-ivory: rgba(242, 237, 224, 0.3);
+
+	
+	--transparent-tomato: rgba(255, 101, 70, 0.3);
+	--transparent-orange: rgba(255, 170, 100, 0.3);
+	--transparent-yellow: rgba(255, 219, 120, 0.3);
+	--transparent-green: rgba(120, 180, 130, 0.3);
+	--transparent-blue: rgba(110, 160, 230, 0.3);
+	--transparent-violet: rgba(130, 150, 220, 0.3);
+
+	--black: rgb(41, 40, 38);
 	--dark-grey: rgb(100, 100, 100);
 	--light-grey: grey;
 	--font-color: rgb(250, 250, 250);
-	--ivory: #F2EDE0;
+	--ivory: rgb(242, 237, 224);
 
-	--tomato: rgb(255, 99, 71);
-	--orange: rgb(236, 170, 107);
-	--yellow: rgb(255, 219, 120);
-	--green: rgb(126, 177, 134);
-	--blue: rgb(112, 156, 234);
-	--violet: rgb(134, 148, 224);
+	--tomato: rgb(255, 100, 70);
+	--orange: rgb(255, 170, 100);
+	--yellow: rgb(255, 220, 120);
+	--green: rgb(120, 180, 130);
+	--blue: rgb(110, 160, 230);
+	--violet: rgb(130, 150, 220);
 
+	--folder-color-1: rgb(255, 140, 140); 
+    --folder-color-2: rgb(255, 140, 120); 
+    --folder-color-3: rgb(255, 190, 120); 
+    --folder-color-4: rgb(255, 220, 140);
+    --folder-color-5: rgb(140, 200, 150);
+    --folder-color-6: rgb(150, 180, 240);
+    --folder-color-7: rgb(180, 190, 240);
+    --folder-color-8: ;
+    --folder-color-9: ;
+    --folder-color-10: ;
+    --folder-color-11: ;
+    --folder-color-12: ;
 }
 
-
-/* -------------- CSSCLASSES -------------- */
+/* ================ CSSCLASSES ================ */
 
 /* --- Adds a natural automatic spacing after each paragraph ('Enter') --- */
 .markdown-source-view.paragraph-space .cm-line:not(.HyperMD-codeblock),
@@ -104,88 +147,88 @@ svg * {
 .markdown-source-view.full-width .cm-scroller {--file-line-width: auto;}
 .markdown-rendered.full-width {--file-line-width: auto;}
 
-/* --- Book-Template ---*/
+/* ============== Book-Template ============== */
 
 .markdown-source-view.book-template .cm-active.cm-line {
     background-color: var(--cursor-line-background);
 	border-radius: 5px;
 	box-shadow: 0 2px 0 3px var(--cursor-line-background);
-   
 }
 
-.markdown-source-view.book-template .cm-gutter		/* Shades the Number Gutter */
+.markdown-source-view.book-template .cm-gutter																/* Shades around the gutter numbers */
 {
-	background-color: rgba(128, 128, 128, 0.07);
+	background-color: var(--transparent-dark);
 	border-radius: 5px;
 	padding-right: 4px;
 	padding-top: 4px;
 }
 
-.markdown-rendered.book-template {					/* -- Render-View Document Settings */
+.markdown-rendered.book-template {																			/* -- Render-View Document Settings */
 	color: var(--black) !important;
 	border-radius: 0px !important;
 	background: var(--ivory) !important;
 }
 
-.markdown-rendered.book-template em {color: var(--black) !important;}					/* -- Render-View Itelics */
+.markdown-rendered.book-template em {color: var(--black) !important;}										/* -- Render-View Italics */
 .markdown-rendered.book-template strong {color: var(--black) !important;}
 .markdown-rendered.book-template code {
-	color: rgb(90, 90, 90) !important;
+	color: var(--dark-grey) !important;
 }
 
-.markdown-source-view .cm-em,
-.markdown-rendered em {color: var(--font-color)}
-.markdown-source-view .cm-strong,
-.markdown-rendered strong {color: var(--font-color)}
+.markdown-source-view.book-template .cm-em,
+.markdown-rendered.book-template em {color: var(--font-color)}
+.markdown-source-view.book-template .cm-strong,
+.markdown-rendered.book-template strong {color: var(--font-color)}
+
+.markdown-source-view.book-template .cm-highlight { 														/* Editor-view highlighter adjustment */
+	color: var(--ivory);
+	background-color: var(--transparent-ivory);}
+
+.markdown-rendered.book-template mark { 																	/* Render-view highlighter adjustment */
+	color: var(--black);
+	background-color: var(--transparent-light);}
 
 .markdown-rendered.book-template .markdown-preview-sizer {
-	/*width: 576px; 					/* -- Outer Standard Book Size */
-	width: 426px;						/* -- Symmetrical 75px or 0.75cm hard margin */
-	font-size: 12.5px !important;		/* -- Preview Font Size */
-	margin-block-start: 0px;			/* -- Removes the top margin of the paragraph text */
-	text-align: justify;
-}    
+	/*width: 576px; 																						/* -- Outer Standard Book Size */
+	width: 426px;																							/* -- Symmetrical 75px or 0.75cm hard margin */
+	font-size: 12.5px !important;																			/* -- Preview Font Size */
+	margin-block-start: 0px;																				/* -- Removes the top margin of the paragraph text */
+	text-align: justify;}    	
 
-.markdown-source-view.book-template .cm-line:not(.HyperMD-header), 		/* -- Document Text Font */
+.markdown-source-view.book-template .cm-line:not(.HyperMD-header), 											/* -- 'book-template' Document Text Font */
 .markdown-rendered.book-template {						
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif !important;
 	text-align: justify;
 	font-weight: normal !important;
-	line-height: 1.5 !important;
-}
+	line-height: 1.5 !important;}
 
-.markdown-rendered.book-template h1,	/* -- Render-View Heading Formatting */
+.markdown-rendered.book-template h1,																		/* -- Render-View Heading Formatting */
 .markdown-rendered.book-template h2,
 .markdown-rendered.book-template h3,
 .markdown-rendered.book-template h4,
 .markdown-rendered.book-template h5,
 .markdown-rendered.book-template h6 {
 	font-weight: normal !important;
-	font-size: 20px !important;			/* -- Render-View Heading Size */
-	text-align: center;					/* -- Render-View Heading Alignment */
-	margin-bottom: 0px;					/* -- Render-View Heading Margin */
+	font-size: 20px !important;																				/* -- Render-View Heading Size */
+	text-align: center;																						/* -- Render-View Heading Alignment */
+	margin-bottom: 0px;																						/* -- Render-View Heading Margin */
 }
 
-.markdown-rendered.book-template .metadata-properties {									/* --  Render-View Properties Box */
-	background-color: transparent !important;}
-
-.markdown-rendered.book-template .inline-title {
-	color: var(--black) !important;
+.markdown-source-view.book-template .inline-title {	color: var(--folder-color) !important;}
+.markdown-rendered.book-template .metadata-properties {background-color: transparent !important;}
+.markdown-rendered.book-template .inline-title {	
+	Color: var(--black) !important;
 	font-weight: normal !important;}
 
-.markdown-source-view.book-template .inline-title {
-	color: var(--l1) !important;}
-
-.markdown-rendered.book-template .metadata-properties-title,		/* -- Render-View Properties Title */
-.markdown-rendered.book-template .metadata-property-key-input,		/* -- Render-View Properties Tags */
-.markdown-rendered.book-template .svg-icon.lucide-forward,			/* -- Render-View Forward SVG */
-.markdown-rendered.book-template .svg-icon.lucide-plus,				/* -- Render-View Properties Plus SVG */
-.markdown-rendered.book-template .svg-icon.lucide-list,				/* -- Render-View Lists SVG */
-.markdown-rendered.book-template .svg-icon.lucide-tags,				/* -- Render-View Tags SVG */
-.markdown-rendered.book-template .multi-select-pill, 				/* -- Render-View Properties Text Background */
-.markdown-rendered.book-template .text-button-label,				/* -- Render-View Add Property Tag */
-.markdown-rendered.book-template .svg-icon.lucide-x {				/* -- Render-View X Tag */				
+.markdown-rendered.book-template .metadata-properties-title,												/* -- Render-View Properties Title */
+.markdown-rendered.book-template .metadata-property-key-input,												/* -- Render-View Properties Tags */
+.markdown-rendered.book-template .svg-icon.lucide-forward,													/* -- Render-View Forward SVG */
+.markdown-rendered.book-template .svg-icon.lucide-plus,														/* -- Render-View Properties Plus SVG */
+.markdown-rendered.book-template .svg-icon.lucide-list,														/* -- Render-View Lists SVG */
+.markdown-rendered.book-template .svg-icon.lucide-tags,														/* -- Render-View Tags SVG */
+.markdown-rendered.book-template .multi-select-pill, 														/* -- Render-View Properties Text Background */
+.markdown-rendered.book-template .text-button-label,														/* -- Render-View Add Property Tag */
+.markdown-rendered.book-template .svg-icon.lucide-x {														/* -- Render-View X Tag */				
 	background-color: transparent !important; 
 	color: var(--black) !important;}
 
-	
