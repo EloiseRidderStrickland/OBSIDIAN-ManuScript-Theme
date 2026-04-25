@@ -57,6 +57,17 @@
 .nav-files-container > div > .nav-folder + .nav-folder 
 {margin-top: var(--size-2-2);}
 
+.markdown-rendered thead tr > th,
+.markdown-rendered thead tr > th:nth-child(2n+2) {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--background-secondary-alt);
+  color: var(--light-grey);
+}
+
+/* Node Attachment Color */
+.graph-view.color-fill-attachment {
+  color: var(--dark-grey);
+}
 
 body {
 
