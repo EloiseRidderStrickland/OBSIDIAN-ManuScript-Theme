@@ -57,11 +57,14 @@
 .nav-files-container > div > .nav-folder + .nav-folder 
 {margin-top: var(--size-2-2);}
 
+.markdown-rendered {
+  --table-header-border-color: var(--ivory);
+}
+
 .markdown-rendered thead tr > th,
 .markdown-rendered thead tr > th:nth-child(2n+2) {
-  background-color: var(--background-secondary);
-  border: 1px solid var(--background-secondary-alt);
-  color: var(--light-grey);
+  background-color: var(--ivory);
+  color: var(--background-secondary-alt);
 }
 
 /* Node Attachment Color */
@@ -159,12 +162,6 @@ svg * {
 .markdown-rendered.full-width {--file-line-width: auto;}
 
 /* ============== Book-Template ============== */
-
-.markdown-source-view.book-template .cm-active.cm-line {
-    background-color: var(--cursor-line-background);
-	border-radius: 5px;
-	box-shadow: 0 2px 0 3px var(--cursor-line-background);
-}
 
 .markdown-source-view.book-template .cm-gutter																/* Shades around the gutter numbers */
 {
