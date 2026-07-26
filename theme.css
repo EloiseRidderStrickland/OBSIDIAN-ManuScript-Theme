@@ -47,7 +47,6 @@
 
 /* Theme-specific folder borders */
 .nav-files-container > div > .nav-folder {
-   /*border: 1px solid var(--dark-grey);*/
    border-left: 4px solid var(--folder-color);
    background-color: var(--transparent-dark);
    border-radius: 0 5px 5px 0;
@@ -57,7 +56,8 @@
 .nav-files-container > div > .nav-folder + .nav-folder 
 {margin-top: var(--size-2-2);}
 
-.markdown-rendered {
+/* Table Controls */
+.markdown-rendered .markdown-source-view {
   --table-header-border-color: var(--ivory);
 }
 
@@ -138,7 +138,7 @@ svg * {
     --folder-color-5: rgb(140, 200, 150);
     --folder-color-6: rgb(150, 180, 240);
     --folder-color-7: rgb(180, 190, 240);
-    --folder-color-8: ;
+    --folder-color-8: rgb(100, 100, 100);
     --folder-color-9: ;
     --folder-color-10: ;
     --folder-color-11: ;
