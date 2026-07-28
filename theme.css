@@ -5,11 +5,60 @@
 */
 
 
-.theme-dark
-{ }
+.theme-dark {
+/* DEFAULT SCHEME */
+  --background-primary: var(--smoke-secondary);
+  --background-secondary: var(--smoke-primary-alt);
 
-.theme-light
-{ }
+/* TABLE CONTROLS */
+	.markdown-rendered table {
+		--table-border-color: var(--smoke);
+  		--table-header-border-color: var(--smoke);
+  		--table-header-background: var(--smoke);
+  		--table-header-color: var(--white);
+	}
+
+	.markdown-source-view thead tr > th,
+	.markdown-rendered thead tr > th {
+  		background-color: var(--table-header-background) !important;
+  		color: var(--table-header-color);
+  		border-color: var(--table-header-border-color);
+	}
+
+/* GRAPH NODE COLOR */
+	.graph-view.color-fill-attachment {
+  		color: var(--dark-grey);
+	}
+
+} /* === END DARK THEME === */
+
+.theme-light {
+  --background-primary: var(--ivory-secondary);
+  --background-secondary: var(--ivory);
+
+/* TABLE CONTROLS */
+	.markdown-rendered table {
+		color: var(--smoke);
+		--table-border-color: var(--ivory);
+  		--table-header-border-color: var(--ivory);
+  		--table-header-background: var(--ivory);
+  		--table-header-color: var(--smoke-secondary-alt);
+	}
+
+	.markdown-source-view thead tr > th,
+	.markdown-rendered thead tr > th {
+  		background-color: var(--table-header-background) !important;
+  		color: var(--table-header-color);
+  		border-color: var(--table-header-border-color);
+	}
+
+/* GRAPH NODE COLOR */
+	.graph-view.color-fill-attachment {
+  		color: var(--ivory);
+	}
+
+} /* === END LIGHT THEME === */
+/* ============= END OF THEME ZONE ============= */
 
 .markdown-source-view .cm-em,
 .markdown-rendered em {color: var(--color-accent)}
@@ -56,21 +105,6 @@
 .nav-files-container > div > .nav-folder + .nav-folder 
 {margin-top: var(--size-2-2);}
 
-/* Table Controls */
-.markdown-rendered .markdown-source-view {
-  --table-header-border-color: var(--ivory);
-}
-
-.markdown-rendered thead tr > th,
-.markdown-rendered thead tr > th:nth-child(2n+2) {
-  background-color: var(--ivory);
-  color: var(--background-secondary-alt);
-}
-
-/* Node Attachment Color */
-.graph-view.color-fill-attachment {
-  color: var(--dark-grey);
-}
 
 body {
 
@@ -122,7 +156,16 @@ svg * {
 	--dark-grey: rgb(100, 100, 100);
 	--light-grey: grey;
 	--font-color: rgb(250, 250, 250);
+
+	/* Light Theme */
 	--ivory: rgb(242, 237, 224);
+	--ivory-secondary: rgb(249, 246, 240);
+
+	/* Dark Theme */
+	--smoke: #202020;
+	--smoke-primary-alt: #1a1a1a;
+	--smoke-secondary: #161616;
+	--smoke-secondary-alt: #000000;
 
 	--tomato: rgb(255, 100, 70);
 	--orange: rgb(255, 170, 100);
@@ -176,6 +219,14 @@ svg * {
 	border-radius: 0px !important;
 	background: var(--ivory) !important;
 }
+
+.markdown-rendered.book-template table {
+    color: var(--smoke) !important;
+    --table-border-color: var(--smoke) !important;
+    --table-header-border-color: var(--smoke) !important;
+    --table-header-color: var(--smoke) !important;
+    --table-header-background: var(--ivory) !important; 
+} 
 
 .markdown-rendered.book-template em {color: var(--black) !important;}										/* -- Render-View Italics */
 .markdown-rendered.book-template strong {color: var(--black) !important;}
